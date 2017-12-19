@@ -2,10 +2,18 @@
 <head>
 <title>Noam the king</title>
 <script>
-  setTimeout(() => {
-    var a = document.getElementById("timeout");
-    a.innerHTML = "VSCODE";
-  },3000);
+  const word = "VSCODE"
+  var webWord = "";
+  var wait = 0;
+  for (let i = 0; i < word.length; i++)
+  {
+    webWord += word[i];
+    wait += 10
+    setTimeout(() => {
+      var a = document.getElementById("timeout");
+      a.innerHTML = webWord;
+    },3000+wait);
+  }
 </script>
 </head>
 <body>
