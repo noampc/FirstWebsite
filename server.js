@@ -1,13 +1,20 @@
-import http from 'http';
+import config from './config';
 
-const server = http.createServer();
+import express from 'express';
 
-server.listen(8080);
+const server = express();
 
-server.on('request', (req, res) => {
-  res.write('Hello World\n');
-  setTimeout(() => {
-    res.write('Made by Noam Goldface!\n');
-    res.end();
-  }, 3000);
+server.get('/', (req, res) => {
+  res.send('Hello World');
 });
+
+server.get('/about.html', (req, res) => {
+  res.send('About page');
+})
+
+server.use(express.static('public'));
+
+server.listen(config.port, () => {
+  console.info('Port is ', config.port);
+});
+
