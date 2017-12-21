@@ -1,23 +1,11 @@
 <html>
 <head>
-<title>Noam the king</title>
-<script>
-  const word = "VSCODE"
-  var webWord = "";
-  var wait = 0;
-  for (let i = 0; i < word.length; i++)
-  {
-    webWord += word[i];
-    wait += 1000
-    setTimeout(() => {
-      var a = document.getElementById("timeout");
-      a.innerHTML = webWord;
-    },3000+wait);
-  }
-</script>
+  <title>Noam the king</title>
+  <script src="public/bundle.js"></script>
 </head>
 <body>
-<h1>Building sites like a PRO!</h1>
-<h2 id="timeout"></h2>
+  <h1>Building sites like a PRO!</h1>
+  <h2 id="timeout"></h2>
+  <p id="log"></p>
 </body>
 </html>
