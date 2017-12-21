@@ -1,5 +1,5 @@
 import config from './config';
-
+import apiRouter from './api';
 import express from 'express';
 
 const server = express();
@@ -13,6 +13,8 @@ server.get('/about.html', (req, res) => {
 })
 
 server.use(express.static('public'));
+server.use('/api', apiRouter);
+
 
 server.listen(config.port, () => {
   console.info('Port is ', config.port);
